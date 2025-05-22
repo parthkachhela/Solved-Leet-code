@@ -1,0 +1,17 @@
+public class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        // Loop through all elements
+        for (int i = 0; i < nums.length; i++) {
+            // Check with every other element ahead
+            for (int j = i + 1; j < nums.length; j++) {
+                // If the sum equals target, return their indices
+                if (nums[i] + nums[j] == target) {
+                    return new int[] {i, j};
+                }
+            }
+        }
+
+        // If no match found (though problem says one match always exists)
+        return new int[] {};
+    }
+}
