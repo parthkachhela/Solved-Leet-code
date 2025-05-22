@@ -1,0 +1,21 @@
+public class Solution {
+    public int firstUniqChar(String s) {
+        // Create an array to store frequency of each character
+        int[] x = new int[26];  // Only 26 letters (a to z)
+
+        // Count the frequency of each character
+        for (char c : s.toCharArray()) {
+            x[c - 'a']++;
+        }
+
+        // Find the first unique character
+        for (int i = 0; i < s.length(); i++) {
+            if (x[s.charAt(i) - 'a'] == 1) {
+                return i;  // Return the index of the first unique character
+            }
+        }
+
+        // If no unique character exists
+        return -1;
+    }
+}
